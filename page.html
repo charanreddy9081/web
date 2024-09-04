@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARAN</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        h2 { text-align: center; }
+        .hidden { display: none; }
+        .details { margin-top: 20px; }
+        .details div { margin-bottom: 10px; }
+        .details a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+
+<div id="login" class="container">
+    <h2>Login</h2>
+    <form onsubmit="return login()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div id="details" class="container hidden">
+    <h2>CHARAN'S DETAILS</h2>
+    <div>
+        <strong>INSTAGRAM:</strong>
+        <a href="#" onclick="showDetails('instagram')">Instagram ID</a>
+    </div>
+    <div>
+        <strong>COURSERA:</strong>
+        <a href="#" onclick="showDetails('coursera')">Coursera ID</a>
+    </div>
+    <div>
+        <strong>MY DRIVE:</strong>
+        <a href="https://drive.google.com/drive/folders/15_9AFLP1Pu3a9fQShetTUahDlldXfel6?usp=drive_link" target="_blank">Open Google Drive</a>
+    </div>
+</div>
+
+<script>
+    function login() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if (username === '192211220' && password === 'cherry') {
+            document.getElementById('login').classList.add('hidden');
+            document.getElementById('details').classList.remove('hidden');
+            return false; // prevent form submission
+        } else {
+            alert('Invalid username or password');
+            return false; // prevent form submission
+        }
+    }
+
+    function showDetails(type) {
+        var details = {
+            instagram: 'Instagram ID: charann_rdy\nPassword: charan00',
+            coursera: 'Coursera ID: charanreddyy1220.sse@saveetha.com\nPassword: Charan@2005'
+        };
+        alert(details[type]);
+    }
+</script>
+
+</body>
+</html>
